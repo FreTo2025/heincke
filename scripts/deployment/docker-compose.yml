@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  backend:
+    container_name: panela-backend
+    build: ./backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/src/config/.env
+    depends_on:
+      - database
+
+  frontend:
+    container_name: panela-frontend
+    build: ./frontend
+    ports:
+      - "8080:80"
+      
+  database:
+    container_name: panela-db
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - db_data:/data/db
+
+volumes:
+  db_data:

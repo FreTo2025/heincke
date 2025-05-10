@@ -1,0 +1,13 @@
+{
+  "email": {
+    "service": "SendGrid",
+    "api_key": "your_sendgrid_api_key",
+    "from": "no-reply@panela.com"
+  },
+  "whatsapp": {
+    "service": "Twilio",
+    "account_sid": "your_account_sid",
+    "auth_token": "your_auth_token",
+    "phone_number": "+123456789"
+  }
+}
